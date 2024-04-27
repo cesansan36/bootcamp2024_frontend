@@ -1,0 +1,14 @@
+.custom-input-text {
+	& input {
+		box-sizing: border-box;
+		background-color: var(--light-color);
+		color: var(--dark-contrast-color);
+		font-weight: bold;
+		border-radius: var(--button-corners);
+		border: 2px solid var(--dark-color);
+		height: 2em;
+		padding-left: 1em;
+		padding-right: 1em;
+		width: 100%;
+	}
+}

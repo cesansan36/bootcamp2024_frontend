@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+	--light-color:#f4e6c4;
+	--medium-color:#f4a261;
+	--dark-color:#c35f46;
+	--light-contrast-color:#2a9d8f;
+	--dark-contrast-color:#264653;
+
+	--button-corners: 1em;
+
+	font-size: 18px;
+}
+
+body {
+	background-color: var(--light-contrast-color);
+}
+

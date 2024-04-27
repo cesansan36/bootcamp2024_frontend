@@ -1,0 +1,18 @@
+.custom-button {
+	display :inline;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	& button{
+		background-color: var(--dark-color);
+		color: var(--dark-contrast-color);
+		font-weight: bold;
+		width: 85%;
+		border-radius: var(--button-corners);
+		border: none;
+		height: 2em;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}

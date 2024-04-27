@@ -1,0 +1,26 @@
+.custom-form {
+	fieldset {
+		width: 90%;
+		max-width: 550px;
+		padding: 1em;
+		background-color: var(--light-color);
+		border-radius: var(--button-corners);
+		border: 3px solid var(--dark-color);
+		margin: auto;
+		display: flex;
+		gap: 1em;
+		flex-direction: column;
+
+
+		& legend {
+			border: 2px solid var(--dark-color);
+			border-radius: var(--button-corners);
+			background-color: var(--light-color);
+			color: var(--dark-contrast-color);
+			padding: 0.5em;
+			font-weight: bold;
+
+
+		}
+	}
+}
