@@ -1,0 +1,7 @@
+<div class="custom-form">
+	<fieldset>
+		<legend>Get Technology</legend>
+		<app-form-field [labelText]="'Name'" [placeholder]="'Ex: Java'" (notifyValueChange)="updateValue($event)"></app-form-field>
+		<app-button [buttonText]="'Search 🔎'" (buttonClicked)="onValueChangeFromInput()"></app-button>
+	</fieldset>
+</div>

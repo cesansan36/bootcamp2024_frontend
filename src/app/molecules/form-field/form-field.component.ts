@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'app-form-field',
@@ -8,4 +8,13 @@ import { Component, Input } from '@angular/core';
 export class FormFieldComponent {
 	@Input() labelText: string = 'label text';
 	@Input() placeholder: string = 'placeholder text';
+
+@Output() notifyValueChange = new EventEmitter<string>();
+
+	fieldInputValue: string = '';
+
+	inputEvent(value: string) {
+		this.fieldInputValue = value;
+		this.notifyValueChange.emit(this.fieldInputValue);
+	}
 }
