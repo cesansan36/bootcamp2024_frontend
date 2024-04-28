@@ -1,0 +1,15 @@
+<div class="custom-page-selector">
+	<div class="page-selector__container">
+		<app-label-number-pair [label]="'Page:'" (valueChanged)="handlePageChange($event)"></app-label-number-pair>
+		<app-label-number-pair [label]="'Items per page:'" (valueChanged)="handleItemsPerPageChange($event)"></app-label-number-pair>
+		<div class="radio-container">
+			<app-input-radio [isChecked]="true" [value]="'true'" [groupName]="'pagination'" [text]="'Ascending'"
+				(valueChanged)="handleRadioChange($event)"></app-input-radio>
+			<app-input-radio [isChecked]="false" [value]="'false'" [groupName]="'pagination'" [text]="'Descending'"
+				(valueChanged)="handleRadioChange($event)"></app-input-radio>
+		</div>
+		<div>
+			<app-button [buttonText]="'🔎'" (buttonClicked)="performSearch()"></app-button>
+		</div>
+	</div>
+</div>

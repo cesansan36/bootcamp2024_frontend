@@ -1,17 +1,22 @@
 .custom-button {
 	display :inline;
+	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 
 	& button{
 		background-color: var(--dark-color);
+		display: flex;
+align-items: center;
+justify-content: center;
 		color: var(--dark-contrast-color);
 		font-weight: bold;
 		width: 85%;
+		height: 100%;
 		border-radius: var(--button-corners);
 		border: none;
-		height: 2em;
+		// height: 2em;
 		padding-left: 1em;
 		padding-right: 1em;
 	}

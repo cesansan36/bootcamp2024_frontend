@@ -1,0 +1,20 @@
+.custom-page-selector {
+	margin: auto;
+	width: 95%;
+	max-width: 1200px;
+
+	& .page-selector__container {
+		width: 100%;
+		display: flex;
+		gap: 40px;
+justify-content: center;
+		// background-color: var(--dark-color);
+	}
+
+	& .radio-container {
+		display: flex;
+		flex-direction: row;
+		gap: 3px;
+justify-content: right;
+	}
+}

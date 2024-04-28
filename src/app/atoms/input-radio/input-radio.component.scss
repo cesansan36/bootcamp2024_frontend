@@ -1,0 +1,39 @@
+[type="radio"] {
+	display: none;
+
+	&+span {
+		width: 100%;
+		border: 2px solid var(--dark-color);
+		border-radius: var(--button-corners);
+		padding-left: 0.8em;
+		padding-right: 0.8em;
+		padding-top: 0.2em;
+		padding-bottom: 0.2em;
+	}
+
+	&:checked+span {
+		background-color: var(--dark-color);
+	}
+}
+
+.custom-radio {
+
+	height: 100%;
+	display: flex;
+
+	& label {
+		display: flex;
+		height: 100%;
+
+		& * {
+			box-sizing: border-box;
+			align-items: center;
+			height: 100%;
+		}
+
+		& span {
+			display: flex;
+			align-items: center;
+		}
+	}
+}

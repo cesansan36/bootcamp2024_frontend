@@ -18,6 +18,6 @@ export class AddTechnologyFormComponent {
 
 	handleClick() {
 		this.http.get('http://localhost:8090/technology/search/t_A')
-			.subscribe(res => console.log(res));
+			// .subscribe(res => console.log(res));
 	}
 }

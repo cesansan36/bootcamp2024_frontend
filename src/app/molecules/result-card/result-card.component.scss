@@ -1,0 +1,23 @@
+.custom-result-card {
+	width: 98%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	// background-color: orange;
+	border-bottom: 3px solid var(--dark-color);
+
+	& .result-card__name p {
+		font-weight: bolder;
+		font-size: 1.3em;
+		text-transform: uppercase;
+	}
+
+	&>* {
+		padding: 0.2em;
+		margin: 0%;
+
+		& p {
+			margin: 0%;
+		}
+	}
+}

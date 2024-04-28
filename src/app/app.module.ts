@@ -11,6 +11,13 @@ import { FormFieldComponent } from './molecules/form-field/form-field.component'
 import { LabelComponent } from './atoms/label/label.component';
 import { AddTechnologyFormComponent } from './organisms/add-technology-form/add-technology-form.component';
 import { GetSpecificTechnologyFormComponent } from './organisms/get-specific-technology-form/get-specific-technology-form.component';
+import { PageSelectorComponent } from './organisms/page-selector/page-selector.component';
+import { InputRadioComponent } from './atoms/input-radio/input-radio.component';
+import { SmallNumberComponent } from './atoms/small-number/small-number.component';
+import { LabelNumberPairComponent } from './molecules/label-number-pair/label-number-pair.component';
+import { ResultCardComponent } from './molecules/result-card/result-card.component';
+import { ResultsHolderComponent } from './organisms/results-holder/results-holder.component';
+import { SearchListComponent } from './templates/search-list/search-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { GetSpecificTechnologyFormComponent } from './organisms/get-specific-tec
     FormFieldComponent,
     LabelComponent,
     AddTechnologyFormComponent,
-    GetSpecificTechnologyFormComponent
+    GetSpecificTechnologyFormComponent,
+    PageSelectorComponent,
+    InputRadioComponent,
+    SmallNumberComponent,
+    LabelNumberPairComponent,
+    ResultCardComponent,
+    ResultsHolderComponent,
+    SearchListComponent
   ],
   imports: [
     BrowserModule,

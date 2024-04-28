@@ -9,7 +9,7 @@ export class FormFieldComponent {
 	@Input() labelText: string = 'label text';
 	@Input() placeholder: string = 'placeholder text';
 
-@Output() notifyValueChange = new EventEmitter<string>();
+	@Output() notifyValueChange = new EventEmitter<string>();
 
 	fieldInputValue: string = '';
 

@@ -11,13 +11,12 @@ export class GetSpecificTechnologyFormComponent {
 	http = inject(HttpClient);
 	technologyNameInput: string = '';
 
-updateValue(value: string) {
-	this.technologyNameInput = value;
-}
+	updateValue(value: string) {
+		this.technologyNameInput = value;
+	}
 
 	onValueChangeFromInput() {
-		// console.log(this.technologyNameInput);
 		this.http.get('http://localhost:8090/technology/search/' + this.
-		technologyNameInput).subscribe(res => console.log(res));
+			technologyNameInput).subscribe(res => console.log(res));
 	}
 }
