@@ -18,6 +18,8 @@ import { LabelNumberPairComponent } from './molecules/label-number-pair/label-nu
 import { ResultCardComponent } from './molecules/result-card/result-card.component';
 import { ResultsHolderComponent } from './organisms/results-holder/results-holder.component';
 import { SearchListComponent } from './templates/search-list/search-list.component';
+import { LogOutComponent } from './molecules/log-out/log-out.component';
+import { LogInComponent } from './organisms/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SearchListComponent } from './templates/search-list/search-list.compone
     LabelNumberPairComponent,
     ResultCardComponent,
     ResultsHolderComponent,
-    SearchListComponent
+    SearchListComponent,
+    LogOutComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
