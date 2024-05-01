@@ -5,21 +5,26 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './atoms/button/button.component';
-import { InputFieldComponent } from './atoms/input-field/input-field.component';
-import { FormFieldComponent } from './molecules/form-field/form-field.component';
-import { LabelComponent } from './atoms/label/label.component';
-import { AddTechnologyFormComponent } from './organisms/add-technology-form/add-technology-form.component';
-import { GetSpecificTechnologyFormComponent } from './organisms/get-specific-technology-form/get-specific-technology-form.component';
-import { PageSelectorComponent } from './organisms/page-selector/page-selector.component';
-import { InputRadioComponent } from './atoms/input-radio/input-radio.component';
-import { SmallNumberComponent } from './atoms/small-number/small-number.component';
-import { LabelNumberPairComponent } from './molecules/label-number-pair/label-number-pair.component';
-import { ResultCardComponent } from './molecules/result-card/result-card.component';
-import { ResultsHolderComponent } from './organisms/results-holder/results-holder.component';
-import { SearchListComponent } from './templates/search-list/search-list.component';
-import { LogOutComponent } from './molecules/log-out/log-out.component';
-import { LogInComponent } from './organisms/log-in/log-in.component';
+import { ButtonComponent } from './components/atoms/button/button.component';
+import { InputFieldComponent } from './components/atoms/input-field/input-field.component';
+import { FormFieldComponent } from './components/molecules/form-field/form-field.component';
+import { LabelComponent } from './components/atoms/label/label.component';
+import { AddTechnologyFormComponent } from './components/organisms/add-technology-form/add-technology-form.component';
+import { GetSpecificTechnologyFormComponent } from './components/organisms/get-specific-technology-form/get-specific-technology-form.component';
+import { PageSelectorComponent } from './components/organisms/page-selector/page-selector.component';
+import { InputRadioComponent } from './components/atoms/input-radio/input-radio.component';
+import { SmallNumberComponent } from './components/atoms/small-number/small-number.component';
+import { LabelNumberPairComponent } from './components/molecules/label-number-pair/label-number-pair.component';
+import { ResultCardComponent } from './components/molecules/result-card/result-card.component';
+import { ResultsHolderComponent } from './components/organisms/results-holder/results-holder.component';
+import { SearchListComponent } from './components/templates/search-list/search-list.component';
+import { LogOutComponent } from './components/molecules/log-out/log-out.component';
+import { LogInComponent } from './components/organisms/log-in/log-in.component';
+import { LibraryComponent } from './components/templates/library/library.component';
+import { HomeComponent } from './components/templates/home/home.component';
+import { TechnologiesComponent } from './components/pages/technologies/technologies.component';
+import { BootcampComponent } from './components/pages/bootcamp/bootcamp.component';
+import { CapabilitiesComponent } from './components/pages/capabilities/capabilities.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { LogInComponent } from './organisms/log-in/log-in.component';
     ResultsHolderComponent,
     SearchListComponent,
     LogOutComponent,
-    LogInComponent
+    LogInComponent,
+    LibraryComponent,
+    HomeComponent,
+    TechnologiesComponent,
+    BootcampComponent,
+    CapabilitiesComponent
   ],
   imports: [
     BrowserModule,

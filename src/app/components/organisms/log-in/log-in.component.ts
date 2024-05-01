@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Token } from '../../models/token.model';
+import { Token } from '../../../models/token.model';
 import { Component, inject } from '@angular/core';
 
 @Component({

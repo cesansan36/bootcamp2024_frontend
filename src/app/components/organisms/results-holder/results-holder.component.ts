@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Technology } from '../../models/technology.model';
+import { Technology } from '../../../models/technology.model';
 
 @Component({
 	selector: 'app-results-holder',

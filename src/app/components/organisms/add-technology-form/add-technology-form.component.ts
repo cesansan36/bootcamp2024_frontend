@@ -27,10 +27,15 @@ export class AddTechnologyFormComponent {
 			name: this.name,
 			description: this.description
 		}
-		let tokenTutor = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXRhbm9AeWltZWlsLmNvbSIsImlzcyI6Imp3dFVzZXJHZW5lcmF0b3IiLCJleHAiOjE3MTQ2OTM5MjYsImlhdCI6MTcxNDA4OTEyNiwiYXV0aG9yaXRpZXMiOiJST0xFX1RVVE9SIn0.2r40OznHld4LR0PVAE7bLOTFtZ46BMA-A9oqc_8SQAE';
-		let tokenAdmin = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmdWxhbm9AeWltZWlsLmNvbSIsImlzcyI6Imp3dFVzZXJHZW5lcmF0b3IiLCJleHAiOjE3MTQ2OTM5MTUsImlhdCI6MTcxNDA4OTExNSwiYXV0aG9yaXRpZXMiOiJST0xFX0FETUlOIn0.z7Drao2XgX6UQrLkHLmgpVfj7-0fGvf9FevPSRrhCaw';
-		let tokenStudent = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXJlbmNlam9AeWltZWlsLmNvbSIsImlzcyI6Imp3dFVzZXJHZW5lcmF0b3IiLCJleHAiOjE3MTQ2OTM5MzcsImlhdCI6MTcxNDA4OTEzNywiYXV0aG9yaXRpZXMiOiJST0xFX1NUVURFTlQifQ.qKaVoArL_kmyo65ods3ViVlAHNfXwt-D4NlihEY3RAU';
+		// let tokenTutor = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXRhbm9AeWltZWlsLmNvbSIsImlzcyI6Imp3dFVzZXJHZW5lcmF0b3IiLCJleHAiOjE3MTQ2OTM5MjYsImlhdCI6MTcxNDA4OTEyNiwiYXV0aG9yaXRpZXMiOiJST0xFX1RVVE9SIn0.2r40OznHld4LR0PVAE7bLOTFtZ46BMA-A9oqc_8SQAE';
+		// let tokenAdmin = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmdWxhbm9AeWltZWlsLmNvbSIsImlzcyI6Imp3dFVzZXJHZW5lcmF0b3IiLCJleHAiOjE3MTQ2OTM5MTUsImlhdCI6MTcxNDA4OTExNSwiYXV0aG9yaXRpZXMiOiJST0xFX0FETUlOIn0.z7Drao2XgX6UQrLkHLmgpVfj7-0fGvf9FevPSRrhCaw';
+		// let tokenStudent = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXJlbmNlam9AeWltZWlsLmNvbSIsImlzcyI6Imp3dFVzZXJHZW5lcmF0b3IiLCJleHAiOjE3MTQ2OTM5MzcsImlhdCI6MTcxNDA4OTEzNywiYXV0aG9yaXRpZXMiOiJST0xFX1NUVURFTlQifQ.qKaVoArL_kmyo65ods3ViVlAHNfXwt-D4NlihEY3RAU';
 		let tokenStored = localStorage.getItem('token');
+
+		if (tokenStored == null) {
+			this.resultMessage = "You have not logged in";
+			return;
+		}
 
 		let headers = new HttpHeaders().set('Authorization', 'Bearer ' + tokenStored);
 

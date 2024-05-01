@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
-import { Technology } from '../../models/technology.model';
+import { Technology } from '../../../models/technology.model';
 
 @Component({
 	selector: 'app-page-selector',
