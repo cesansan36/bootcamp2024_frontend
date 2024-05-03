@@ -9,7 +9,6 @@ import { ButtonComponent } from './components/atoms/button/button.component';
 import { InputFieldComponent } from './components/atoms/input-field/input-field.component';
 import { FormFieldComponent } from './components/molecules/form-field/form-field.component';
 import { LabelComponent } from './components/atoms/label/label.component';
-import { AddTechnologyFormComponent } from './components/organisms/add-technology-form/add-technology-form.component';
 import { GetSpecificTechnologyFormComponent } from './components/organisms/get-specific-technology-form/get-specific-technology-form.component';
 import { PageSelectorComponent } from './components/organisms/page-selector/page-selector.component';
 import { InputRadioComponent } from './components/atoms/input-radio/input-radio.component';
@@ -25,6 +24,10 @@ import { HomeComponent } from './components/templates/home/home.component';
 import { TechnologiesComponent } from './components/pages/technologies/technologies.component';
 import { BootcampComponent } from './components/pages/bootcamp/bootcamp.component';
 import { CapabilitiesComponent } from './components/pages/capabilities/capabilities.component';
+import { TemplatePickerComponent } from './templates/picker/template-picker/template-picker.component';
+import { DropdownComponent } from './components/atoms/dropdown/dropdown.component';
+import { ModalComponent } from './components/molecules/modal/modal.component';
+import { AddTechnologyFormComponent } from './components/molecules/add-technology-form/add-technology-form.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,6 @@ import { CapabilitiesComponent } from './components/pages/capabilities/capabilit
     InputFieldComponent,
     FormFieldComponent,
     LabelComponent,
-    AddTechnologyFormComponent,
     GetSpecificTechnologyFormComponent,
     PageSelectorComponent,
     InputRadioComponent,
@@ -48,7 +50,11 @@ import { CapabilitiesComponent } from './components/pages/capabilities/capabilit
     HomeComponent,
     TechnologiesComponent,
     BootcampComponent,
-    CapabilitiesComponent
+    CapabilitiesComponent,
+    TemplatePickerComponent,
+    DropdownComponent,
+    ModalComponent,
+    AddTechnologyFormComponent,
   ],
   imports: [
     BrowserModule,

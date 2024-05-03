@@ -1,0 +1,9 @@
+<ng-container *ngIf="isHomeRoute">
+	<app-home></app-home>
+</ng-container>
+<ng-container *ngIf="!isHomeRoute">
+	<app-library>
+		<!-- <router-outlet name="technologies"></router-outlet>
+		<router-outlet name="capabilities"></router-outlet> -->
+	</app-library>
+</ng-container>

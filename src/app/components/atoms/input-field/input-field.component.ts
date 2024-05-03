@@ -7,9 +7,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class InputFieldComponent {
 	inputValue: string = '';
-	@Input() placeholder: string = 'Text input';
+
+	@Input() label: string = 'no text set';
+	@Input() placeholder: string = 'no text set';
 
 	@Output() valueChanged = new EventEmitter<string>();
+
 	onInputChange() {
 		this.valueChanged.emit(this.inputValue);
 	}

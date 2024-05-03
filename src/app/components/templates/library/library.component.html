@@ -1,10 +1,8 @@
 <section class="library">
 	<aside>
-<img src="assets/images/logo.svg" alt="logo">
-<a href="#"><img src="assets/images/house.svg" alt="home_link"><span>Inicio</span></a>
-<a href="#"><img src="assets/images/books.svg" alt="library_link"><span>Biblioteca</span></a>
-
-
+		<img src="assets/images/logo.svg" alt="logo">
+		<a href="#"><img src="assets/images/house.svg" alt="home_link"><span>Inicio</span></a>
+		<a href="#"><img src="assets/images/books.svg" alt="library_link"><span>Biblioteca</span></a>
 	</aside>
 	<section>
 		<header>
@@ -12,10 +10,28 @@
 		</header>
 		<main>
 			<nav>
-				<a href="#">Tecnologías</a>
-				<a href="#">Capacidades</a>
-				<a href="#">Bootcamp</a>
+				<a href="/library/technologies">Tecnologías</a>
+				<a href="/library/capabilities">Capacidades</a>
+				<a href="/library/bootcamp">Bootcamp</a>
 			</nav>
+
+			<div class="library__results">
+				<p>sdasdasd</p>
+				<p>sdasdasd</p>
+				<p>sdasdasd</p>
+				<p>sdasdasd</p>
+			</div>
+
+			<app-button [buttonText]="'+ Crear'" (buttonClicked)="showModal()"></app-button>
 		</main>
 	</section>
 </section>
+<app-modal
+	[title]="'Crear Tecnología'"
+	[buttonText]="'Crear'"
+	[isModalVisible]="isModalVisible"
+	(closeClicked)="hideModal()">
+
+	<app-add-technology-form></app-add-technology-form>
+</app-modal>
+
