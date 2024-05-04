@@ -1,4 +1,7 @@
-<div class="circle">
+<div *ngIf="isSuccess" class="success">
 	<img src="assets/images/Success.svg" alt="success_icon">
+</div>
+<div *ngIf="!isSuccess" class="error">
+	<img src="assets/images/close.svg" alt="error_icon">
 </div>
 <p>{{text}}</p>

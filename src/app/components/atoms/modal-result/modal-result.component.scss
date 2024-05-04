@@ -1,5 +1,4 @@
-.circle {
-	background-color: green;
+div {
 	margin: auto;
 	width: 3em;
 	height: 3em;
@@ -12,9 +11,16 @@
 		max-width: 60%;
 		max-height: 60%;
 	}
-
 }
 
 p {
 	text-align: center;
+}
+
+.success {
+	background-color: var(--success-color);
+}
+
+.error {
+	background-color: var(--error-color);
 }

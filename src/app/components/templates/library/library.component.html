@@ -27,14 +27,14 @@
 	</section>
 </section>
 <app-modal
-[title]="'Crear Tecnología'"
-	[buttonText]="'Crear'"
+	[title]="'Crear Tecnología'"
+	[buttonText]="buttonText"
 	[isModalVisible]="isModalVisible"
 	(closeClicked)="hideModal()"
-	(formButtonClicked)="tryAddTechnology()">
+	(formButtonClicked)="handleModalButtonClick()">
 
 	<app-add-technology-form *ngIf="!isModalResult" (addTechnologyData)="updateFormData($event)"></app-add-technology-form>
-	<app-modal-result *ngIf="isModalResult"></app-modal-result>
+	<app-modal-result *ngIf="isModalResult" [text]="resultText" [isSuccess]="isSuccessResult"></app-modal-result>
 
 </app-modal>
 

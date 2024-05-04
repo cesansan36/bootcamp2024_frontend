@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./modal-result.component.scss']
 })
 export class ModalResultComponent {
+	@Input() isSuccess: boolean = true;
 	@Input() text: string = 'text not set';
 }
