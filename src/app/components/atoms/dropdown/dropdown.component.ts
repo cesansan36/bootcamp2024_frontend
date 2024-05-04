@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DropdownOption } from 'src/app/models/dropdownOption';
+import { TextValuePair } from 'src/app/models/text-value-pair';
 
 @Component({
   selector: 'app-dropdown',
@@ -8,15 +9,24 @@ import { DropdownOption } from 'src/app/models/dropdownOption';
 })
 export class DropdownComponent {
 
-	@Input() options: DropdownOption[] = [
+	selectedOption: string = '';
+
+	@Input() options: TextValuePair[] = [
 		{
-			label: 'Option 1',
+			text: 'Option 1',
 			value: "1"
 		},
 		{
-			label: 'Option 2',
+			text: 'Option 2',
 			value: "2"
 		}
 	];
 
+	@Output() optionSelected = new EventEmitter<TextValuePair>();
+
+	onOptionChange(optionValue: string) {
+		this.selectedOption = optionValue;
+		console.log("selected: " +this.selectedOption);
+		this.optionSelected.emit(this.options.find(option => option.value === this.selectedOption)!);
+	}
 }

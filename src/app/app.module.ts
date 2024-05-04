@@ -28,6 +28,10 @@ import { TemplatePickerComponent } from './templates/picker/template-picker/temp
 import { DropdownComponent } from './components/atoms/dropdown/dropdown.component';
 import { ModalComponent } from './components/molecules/modal/modal.component';
 import { AddTechnologyFormComponent } from './components/molecules/add-technology-form/add-technology-form.component';
+import { ButtonWithValueComponent } from './components/atoms/button-with-value/button-with-value.component';
+import { DropdownTagHolderComponent } from './components/molecules/dropdown-tag-holder/dropdown-tag-holder.component';
+import { AddCapabilityFormComponent } from './components/organisms/add-capability-form/add-capability-form.component';
+import { ModalResultComponent } from './components/atoms/modal-result/modal-result.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,10 @@ import { AddTechnologyFormComponent } from './components/molecules/add-technolog
     DropdownComponent,
     ModalComponent,
     AddTechnologyFormComponent,
+    ButtonWithValueComponent,
+    DropdownTagHolderComponent,
+    AddCapabilityFormComponent,
+    ModalResultComponent,
   ],
   imports: [
     BrowserModule,

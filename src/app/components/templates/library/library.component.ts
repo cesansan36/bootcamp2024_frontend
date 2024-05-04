@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AddTechnologyRequest } from 'src/app/models/add-technology-request';
 import { DropdownOption } from 'src/app/models/dropdownOption';
+import { CreateServiceService } from 'src/app/services/create-service.service';
+import { ButtonTextConstants } from 'src/utils/button-text-constants';
 
 @Component({
 	selector: 'app-library',
@@ -7,7 +10,11 @@ import { DropdownOption } from 'src/app/models/dropdownOption';
 	styleUrls: ['./library.component.scss']
 })
 export class LibraryComponent {
+	addService = inject(CreateServiceService);
 	isModalVisible = false;
+	isModalResult = false;
+	buttonText: string = ButtonTextConstants.CREATE;
+	formData: AddTechnologyRequest = { name: '', description: '' }
 	options: DropdownOption[] = [
 		{
 			label: 'Tecnologías',
@@ -21,10 +28,40 @@ export class LibraryComponent {
 	];
 	showModal() {
 		this.isModalVisible = true;
-		console.log(this.isModalVisible);
 	}
 	hideModal() {
 		this.isModalVisible = false;
-		console.log(this.isModalVisible);
 	}
+
+	updateFormData(formData: AddTechnologyRequest) {
+		this.formData = formData;
+	}
+
+	tryAddTechnology() {
+		// this.addService.createTechnology(this.formData).subscribe(
+		// 	(result) => {
+		// 		console.log(result.isSuccess);
+		// 		console.log(result.message);
+		// 	}
+		// );
+
+		this.addService.createTechnology(this.formData).subscribe ({
+			next: () => {console.log("Celebremos")},
+			error: (error) => {
+				let errorMessage = "UndefinedError";
+				if (error.error && error.error.message) {
+					errorMessage = error.error.message;
+				}console.log(errorMessage);
+			}
+		});
+	}
+	// tryAddTechnology() {
+	// 	let result = this.addService.createTechnology(this.formData);
+	// 	if (result) {
+	// 		console.log("Celebremos");
+	// 	}
+	// 	else {
+	// 		console.log("No celebremos");
+	// 	}
+	// }
 }

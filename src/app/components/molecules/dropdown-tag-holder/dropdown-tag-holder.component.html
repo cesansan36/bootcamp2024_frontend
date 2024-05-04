@@ -1,0 +1,9 @@
+<div class="tag-holder">
+	<span>{{label}}</span>
+	<app-dropdown (optionSelected)="addTag($event)"></app-dropdown>
+	<section class="tags">
+		<app-button-with-value *ngFor="let tag of tags" [buttonText]="tag.text" [buttonValue]="tag.value"
+			(buttonClicked)="removeTag($event)">
+		</app-button-with-value>
+	</section>
+</div>
