@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CapabilityFormTexts } from 'src/app/models/componentmodels/capability-form';
-import { AddCapabilityRequest } from 'src/app/models/datamodels/add-capability-request';
 import { TextValuePair } from 'src/app/models/text-value-pair';
 import { TextConstants } from 'src/utils/text-constats';
 
@@ -14,7 +13,7 @@ export class AddCapabilityFormComponent {
 	capabilityFormTexts: CapabilityFormTexts = {
 		nameLabel: TextConstants.LABEL_NAME,
 		namePlaceholder: TextConstants.GENERIC_PLACEHOLDER_TEXT,
-		descriptionLabel: TextConstants.LABEL_TECHNOLOGY_LIST
+		technologiesLabel: TextConstants.LABEL_TECHNOLOGY_LIST
 	}
 
 	@Input() options: TextValuePair[] = [];

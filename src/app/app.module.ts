@@ -32,6 +32,7 @@ import { ButtonWithValueComponent } from './components/atoms/button-with-value/b
 import { DropdownTagHolderComponent } from './components/molecules/dropdown-tag-holder/dropdown-tag-holder.component';
 import { AddCapabilityFormComponent } from './components/organisms/add-capability-form/add-capability-form.component';
 import { ModalResultComponent } from './components/atoms/modal-result/modal-result.component';
+import { AddBootcampFormComponent } from './components/organisms/add-bootcamp-form/add-bootcamp-form.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { ModalResultComponent } from './components/atoms/modal-result/modal-resu
     DropdownTagHolderComponent,
     AddCapabilityFormComponent,
     ModalResultComponent,
+    AddBootcampFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { AddTechnologyRequest } from '../models/datamodels/add-technology-reques
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, delay, map, of } from 'rxjs';
 import { AddCapabilityRequest } from '../models/datamodels/add-capability-request';
+import { AddBootcampRequest } from '../models/datamodels/add-bootcamp-request';
 
 @Injectable({
 	providedIn: 'root'
@@ -17,10 +18,14 @@ export class CreateServiceService {
 		return this.http.post(url, technologyData);
 	}
 	createCapability(capabilityData: AddCapabilityRequest): Observable<any> {
-		console.log(capabilityData);
 		let url = "http://localhost:8090/capability/add";
 
 		return this.http.post(url, capabilityData);
+	}
+	createBootcamp(bootcampData: AddBootcampRequest): Observable<any> {
+		let url = "http://localhost:8090/bootcamp/add";
+
+		return this.http.post(url, bootcampData);
 	}
 
 	// simulatedRequest(isError: boolean): Observable<any> {

@@ -1,0 +1,23 @@
+<div>
+	<app-input-field
+		[label]="bootcampFormTexts.nameLabel"
+		[placeholder]="bootcampFormTexts.namePlaceholder"
+		(valueChanged)="onUpdateBootcampName($event)"
+	>
+	</app-input-field>
+	<app-input-field
+		[label]="bootcampFormTexts.descriptionLabel"
+		[placeholder]="bootcampFormTexts.descriptionPlaceholder"
+		(valueChanged)="onUpdateBootcampDescription($event)"
+	>
+	</app-input-field>
+
+	<app-dropdown-tag-holder
+		[label]="bootcampFormTexts.descriptionLabel"
+		[options]="options"
+		[tags]="[]"
+		(currentTags)="onUpdateBootcampCapabilities($event)"
+	>
+
+	</app-dropdown-tag-holder>
+</div>
