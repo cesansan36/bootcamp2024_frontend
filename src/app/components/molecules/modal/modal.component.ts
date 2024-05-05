@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ModalModel } from 'src/app/models/componentmodels/modal-model';
+import { MODAL_INITIAL } from 'src/utils/initialstates/component/modal/modal-initial';
 
 @Component({
 	selector: 'app-modal',
@@ -6,10 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 	styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
-	@Input() size: string = "wide";
-	@Input() title: string = "No set title";
-	@Input() buttonText: string = "No set name";
-	@Input() isModalVisible: boolean = false;
+	@Input() modalModel: ModalModel = {...MODAL_INITIAL};
 
 	@Output() closeClicked = new EventEmitter<void>();
 	@Output() formButtonClicked = new EventEmitter<void>();

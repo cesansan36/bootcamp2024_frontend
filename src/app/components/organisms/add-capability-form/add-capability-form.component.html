@@ -1,11 +1,17 @@
 <div>
 	<app-input-field
-		[label]="'Nombre'"
-		[placeholder]="'Placeholder text here'"
-		(valueChanged)="onUpdateCapabilityName($event)">
+		[label]="capabilityFormTexts.nameLabel"
+		[placeholder]="capabilityFormTexts.namePlaceholder"
+		(valueChanged)="onUpdateCapabilityName($event)"
+	>
 	</app-input-field>
 
-	<app-dropdown-tag-holder (currentTags)="onUpdateCapabilityTechnologies($event)" [tags]="[]">
+	<app-dropdown-tag-holder
+		[label]="capabilityFormTexts.descriptionLabel"
+		[options]="options"
+		[tags]="[]"
+		(currentTags)="onUpdateCapabilityTechnologies($event)"
+	>
 
 	</app-dropdown-tag-holder>
 </div>

@@ -7,6 +7,7 @@ import { TextValuePair } from 'src/app/models/text-value-pair';
 	styleUrls: ['./dropdown-tag-holder.component.scss']
 })
 export class DropdownTagHolderComponent {
+	@Input() options: TextValuePair[] = [];
 	@Input() tags: TextValuePair[] = [
 		{
 			text: 'Tag 1',
@@ -27,7 +28,7 @@ export class DropdownTagHolderComponent {
 	];
 
 	@Output() currentTags = new EventEmitter<TextValuePair[]>();
-label: string = 'label';
+@Input() label: string = 'label';
 
 	emitTags() {
 		this.currentTags.emit(this.tags);

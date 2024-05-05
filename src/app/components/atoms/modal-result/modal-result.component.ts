@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { ModalResultModel } from 'src/app/models/componentmodels/modal-result-model';
+import { MODAL_RESULT_INITIAL } from 'src/utils/initialstates/component/modalresult/modal-result-initial';
 
 @Component({
   selector: 'app-modal-result',
@@ -6,6 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./modal-result.component.scss']
 })
 export class ModalResultComponent {
-	@Input() isSuccess: boolean = true;
-	@Input() text: string = 'text not set';
+
+	@Input() modalModel: ModalResultModel = {...MODAL_RESULT_INITIAL};
 }

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { AddCapabilityRequest } from 'src/app/models/add-capability-request';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CapabilityFormTexts } from 'src/app/models/componentmodels/capability-form';
+import { AddCapabilityRequest } from 'src/app/models/datamodels/add-capability-request';
 import { TextValuePair } from 'src/app/models/text-value-pair';
+import { TextConstants } from 'src/utils/text-constats';
 
 @Component({
 	selector: 'app-add-capability-form',
@@ -9,16 +11,21 @@ import { TextValuePair } from 'src/app/models/text-value-pair';
 })
 export class AddCapabilityFormComponent {
 
-	capabilityData: AddCapabilityRequest = {
-		name: '',
-		description: 'Description not set',  // TODO: clarify field used in backend not present in front end design
-		technologies: []
-	};
+	capabilityFormTexts: CapabilityFormTexts = {
+		nameLabel: TextConstants.LABEL_NAME,
+		namePlaceholder: TextConstants.GENERIC_PLACEHOLDER_TEXT,
+		descriptionLabel: TextConstants.LABEL_TECHNOLOGY_LIST
+	}
+
+	@Input() options: TextValuePair[] = [];
+
+	@Output() capabilityNameChanged = new EventEmitter<string>();
+	@Output() capabilityTechnologiesChanged = new EventEmitter<TextValuePair[]>();
 
 	onUpdateCapabilityName(value: string) {
-		this.capabilityData.name = value;
+		this.capabilityNameChanged.emit(value);
 	}
 	onUpdateCapabilityTechnologies(values: TextValuePair[]) {
-		this.capabilityData.technologies = values.map(x => x.value);
+		this.capabilityTechnologiesChanged.emit(values);
 	}
 }

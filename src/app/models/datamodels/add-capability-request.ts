@@ -1,5 +1,5 @@
 export interface AddCapabilityRequest {
 	name: string;
 	description: string;
-	technologies: string[];
+	technologiesNames: string[];
 }

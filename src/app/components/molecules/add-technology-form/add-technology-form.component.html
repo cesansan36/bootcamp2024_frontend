@@ -1,13 +1,13 @@
 <div>
 	<app-input-field
-		[label]="'Nombre'"
-		[placeholder]="'Placeholder text here'"
+		[label]="technologyformTexts.nameLabel"
+		[placeholder]="technologyformTexts.namePlaceholder"
 		(valueChanged)="onUpdateTechnologyName($event)">
 	</app-input-field>
 
 	<app-input-field
-		[label]="'Descripción'"
-		[placeholder]="'Placeholder text here'"
+		[label]="technologyformTexts.descriptionLabel"
+		[placeholder]="technologyformTexts.descriptionPlaceholder"
 		(valueChanged)="onUpdateTechnologyDescription($event)">
 	</app-input-field>
 </div>

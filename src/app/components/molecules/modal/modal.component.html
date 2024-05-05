@@ -1,11 +1,11 @@
-<ng-container *ngIf="isModalVisible">
+<ng-container *ngIf="modalModel.isModalVisible">
 
 	<div class="modal">
-		<section class="modal__panel {{size}}">
-			<header><span>{{title}}</span><img src="assets/images/close.svg" alt="" (click)="hideModal()"></header>
+		<section class="modal__panel">
+			<header><span>{{modalModel.title}}</span><img src="assets/images/close.svg" alt="" (click)="hideModal()"></header>
 			<main>
 				<ng-content></ng-content>
-				<app-button [buttonText]="buttonText" (click)="onFormButtonClicked()"></app-button>
+				<app-button [buttonText]="modalModel.buttonText" (click)="onFormButtonClicked()"></app-button>
 			</main>
 		</section>
 	</div>

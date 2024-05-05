@@ -1,10 +1,15 @@
-import { Component, inject } from '@angular/core';
-import { AddTechnologyRequest } from 'src/app/models/add-technology-request';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { AddTechnologyRequest } from 'src/app/models/datamodels/add-technology-request';
+import { ModalModel } from 'src/app/models/componentmodels/modal-model';
+import { ModalResultModel } from 'src/app/models/componentmodels/modal-result-model';
 import { CreateServiceService } from 'src/app/services/create-service.service';
 import { ButtonTextConstants } from 'src/utils/button-text-constants';
-import { InitialStates } from 'src/utils/initial-states';
+import { MODAL_INITIAL } from 'src/utils/initialstates/component/modal/modal-initial';
+import { MODAL_RESULT_INITIAL } from 'src/utils/initialstates/component/modalresult/modal-result-initial';
+import { ADD_TECHNOLOGY_INITIAL } from 'src/utils/initialstates/data/addtechnologyrequest/add-technology-initial';
 import { TextConstants } from 'src/utils/text-constats';
-import { ToDoConstants } from 'src/utils/todo.text';
+import { LIBRARY_MODAL_INITIAL } from 'src/utils/initialstates/component/librarymodal/library-modal';
+import { LibraryModal } from 'src/app/models/componentmodels/library-modal';
 
 @Component({
 	selector: 'app-library',
@@ -13,72 +18,22 @@ import { ToDoConstants } from 'src/utils/todo.text';
 })
 export class LibraryComponent {
 	addService = inject(CreateServiceService);
-	isModalVisible = false;
-	isModalResult = false;
-	isSuccessResult : boolean = false;
-	buttonText: string = ButtonTextConstants.CREATE;
-	resultText = ToDoConstants.TODO;
-	formData: AddTechnologyRequest = InitialStates.ADD_TECHNOLOGY_REQUEST
-	// options: DropdownOption[] = [
-	// 	{
-	// 		label: 'Tecnologías',
-	// 		value: 'technologies'
-	// 	},
-	// 	{
-	// 		label: 'Capacidades',
-	// 		value: 'capabilities'
-	// 	}
 
-	// ];
+	@Input() libraryModal: LibraryModal = {...LIBRARY_MODAL_INITIAL};
+	@Output() libraryModalChange = new EventEmitter<LibraryModal>();
+
 	showModal() {
-		this.isModalVisible = true;
+		this.libraryModal.modal.isModalVisible = true;
+		this.libraryModalChange.emit(this.libraryModal);
 	}
 	hideModal() {
-		this.isModalVisible = false;
-		this.isModalResult = false;
-		this.buttonText = ButtonTextConstants.CREATE;
+		this.libraryModal.modal.isModalVisible = false;
+		this.libraryModalChange.emit(this.libraryModal);
 	}
 
-	updateFormData(formData: AddTechnologyRequest) {
-		this.formData = formData;
-	}
+	@Output() formButtonClicked = new EventEmitter();
 
 	handleModalButtonClick() {
-		if (this.buttonText === ButtonTextConstants.CREATE) {
-			this.tryAddTechnology();
-		}
-		else if (this.buttonText === ButtonTextConstants.ACCEPT) {
-			this.formData = InitialStates.ADD_TECHNOLOGY_REQUEST;
-			this.hideModal();
-		}
-		else {
-			this.isModalResult = false;
-			this.buttonText = ButtonTextConstants.CREATE;
-		}
-	}
-
-	tryAddTechnology() {
-
-		this.addService.createTechnology(this.formData).subscribe({
-			next: () => {
-				this.resultText = TextConstants.TECHNOLOGY_CREATED_MESSAGE;
-				console.log(TextConstants.TECHNOLOGY_CREATED_MESSAGE)
-				this.isModalResult = true;
-				this.buttonText = ButtonTextConstants.ACCEPT;
-				this.isSuccessResult = true;
-			},
-			error: (error) => {
-				this.isModalResult = true;
-				this.buttonText = ButtonTextConstants.GO_BACK;
-				this.isSuccessResult = false;
-
-				let errorMessage = TextConstants.UNDEFINED_ERROR;
-				if (error.error && error.error.message) {
-					errorMessage = error.error.message;
-				}
-
-				this.resultText = errorMessage;
-			}
-		});
+		this.formButtonClicked.emit();
 	}
 }

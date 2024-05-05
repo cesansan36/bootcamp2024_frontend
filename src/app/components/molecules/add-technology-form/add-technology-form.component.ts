@@ -1,26 +1,28 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { AddTechnologyRequest } from 'src/app/models/add-technology-request';
+import { TechnologyFormTexts } from 'src/app/models/componentmodels/technology-form';
+import { TextConstants } from 'src/utils/text-constats';
 
 @Component({
-  selector: 'app-add-technology-form',
-  templateUrl: './add-technology-form.component.html',
-  styleUrls: ['./add-technology-form.component.scss']
+	selector: 'app-add-technology-form',
+	templateUrl: './add-technology-form.component.html',
+	styleUrls: ['./add-technology-form.component.scss']
 })
 export class AddTechnologyFormComponent {
 
-	technologyData: AddTechnologyRequest = {
-		name: '',
-		description: ''
-	};
+	technologyformTexts: TechnologyFormTexts = {
+		nameLabel: TextConstants.LABEL_NAME,
+		namePlaceholder: TextConstants.GENERIC_PLACEHOLDER_TEXT,
+		descriptionLabel: TextConstants.LABEL_DESCRIPTION,
+		descriptionPlaceholder: TextConstants.GENERIC_PLACEHOLDER_TEXT
+	}
 
-	@Output() addTechnologyData = new EventEmitter<AddTechnologyRequest>();
+	@Output() technologyNameChanged = new EventEmitter<string>();
+	@Output() technologyDescriptionChanged = new EventEmitter<string>();
 
 	onUpdateTechnologyName(value: string) {
-		this.technologyData.name = value;
-		this.addTechnologyData.emit(this.technologyData);
+		this.technologyNameChanged.emit(value);
 	}
 	onUpdateTechnologyDescription(value: string) {
-		this.technologyData.description = value;
-		this.addTechnologyData.emit(this.technologyData);
+		this.technologyDescriptionChanged.emit(value);
 	}
 }

@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { AddTechnologyRequest } from '../models/add-technology-request';
+import { AddTechnologyRequest } from '../models/datamodels/add-technology-request';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, catchError, map, of } from 'rxjs';
-import { ResponseStatus } from '../models/response-status';
+import { Observable, catchError, delay, map, of } from 'rxjs';
+import { AddCapabilityRequest } from '../models/datamodels/add-capability-request';
 
 @Injectable({
 	providedIn: 'root'
@@ -15,66 +15,22 @@ export class CreateServiceService {
 		let url = "http://localhost:8090/technology/add";
 
 		return this.http.post(url, technologyData);
-		// .pipe(
-		// 	catchError((error: HttpErrorResponse) => {
-		// 		throw error;
-		// 	})
-		// );
-
-		// let responseStatus: ResponseStatus = {
-		// 	isSuccess: false,
-		// 	message: ""
-		// }
-
-		// this.http.post(url, technologyData).subscribe({
-
-		// 	next: () => {
-		// 		responseStatus.isSuccess = true;
-		// 		responseStatus.message = "Technology added successfuly";
-		// 	},
-		// 	error: (e: HttpErrorResponse) => {
-		// 		if (e.error == null) {
-		// 			responseStatus.message = "UndefinedError";
-		// 		}
-		// 		else {
-		// 			responseStatus.message = e.error.message;
-		// 		}
-		// 	}
-		// })
-		// return of(responseStatus);
-
-
-
-		// let result : boolean = false;
-
-		// return this.http.post(url, technologyData).pipe(
-		// 	map(() => true), // Mapea la respuesta a true
-		// 	catchError((error: HttpErrorResponse) => {
-		// 		console.error(error);
-		// 		return of(false); // Devuelve false en caso de error
-		// 	})
-		// );
 	}
-	// createTechnology(technologyData: AddTechnologyRequest) : boolean {
-	// 	let url = "http://localhost:8090/technology/add";
-	// 	let result : boolean = false;
+	createCapability(capabilityData: AddCapabilityRequest): Observable<any> {
+		console.log(capabilityData);
+		let url = "http://localhost:8090/capability/add";
 
-	// 	this.http.post(url, technologyData).subscribe({
+		return this.http.post(url, capabilityData);
+	}
 
-	// 		next: () => {
-	// 			result = true;
-	// 		},
-	// 		error: (e: HttpErrorResponse) => {
-	// 			result = false;
-	// 			if (e.error == null) {
-	// 				console.log("Error no determinado");
-	// 				console.log(e);
-	// 			}
-	// 			else {
-	// 				console.log(e.error.message);
-	// 			}
-	// 		}
-	// 	})
-	// 	return result;
+	// simulatedRequest(isError: boolean): Observable<any> {
+	// 	delay(1000);
+
+	// 	if (isError) {
+	// 		let er = new HttpErrorResponse({ error: 'Simulated error' });
+	// 		throw er;
+	// 		return of(er);
+	// 	}
+	// 	return of(true);
 	// }
 }

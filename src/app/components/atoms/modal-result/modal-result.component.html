@@ -1,7 +1,7 @@
-<div *ngIf="isSuccess" class="success">
+<div *ngIf="modalModel.isSuccess" class="success">
 	<img src="assets/images/Success.svg" alt="success_icon">
 </div>
-<div *ngIf="!isSuccess" class="error">
+<div *ngIf="!modalModel.isSuccess" class="error">
 	<img src="assets/images/close.svg" alt="error_icon">
 </div>
-<p>{{text}}</p>
+<p>{{modalModel.text}}</p>

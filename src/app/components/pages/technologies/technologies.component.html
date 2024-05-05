@@ -1,4 +1,13 @@
-<app-library></app-library>
+<app-library
+[(libraryModal)]="libraryModal"
+(formButtonClicked)="handleModalButtonClick()">
+
+	<app-add-technology-form
+		(technologyNameChanged)="updateTechnologyName($event)"
+		(technologyDescriptionChanged)="updateTechnologyDescription($event)"
+	>
+	</app-add-technology-form>
+</app-library>
 <!-- <p pre>technologies works!</p>
 
 <p pos>technologies worksw!</p> -->
