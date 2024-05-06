@@ -8,21 +8,24 @@
 		<header>
 			<img src="assets/images/nosotros_round_1.png" alt="user_icon">
 		</header>
-		<main>
-			<nav>
-				<a href="/library/technologies">Tecnologías</a>
-				<a href="/library/capabilities">Capacidades</a>
-				<a href="/library/bootcamp">Bootcamp</a>
-			</nav>
-
-			<div class="library__results">
-				<p>sdasdasd</p>
-				<p>sdasdasd</p>
-				<p>sdasdasd</p>
-				<p>sdasdasd</p>
+		<main class="library">
+			<!-- <app-dropdown [options]="pageSizeOptions" (optionSelected)="handleModalButtonClick()"></app-dropdown> -->
+			<!-- <select>
+				<option *ngFor="let option of pageSizeOptions" [value]="option.value">{{ option.text }}</option>
+			</select> -->
+			<app-library-nav></app-library-nav>
+			<div class="flex-right">
+				<app-dropdown [options]="pageSizeOptions" (optionSelected)="handleItemsPerPageChange($event)"></app-dropdown>
 			</div>
 
-			<app-button [buttonText]="'+ Crear'" (buttonClicked)="showModal()"></app-button>
+			<div class="library__results">
+				<app-result-card *ngFor="let result of results" [resultCardContent]="result"></app-result-card>
+			</div>
+
+			<div class="library__footer flex-right">
+				<app-button [buttonText]="'+ Crear'" (buttonClicked)="showModal()"></app-button>
+				<app-pagination (pageNumberChange)="handlePageChange($event)"></app-pagination>
+			</div>
 		</main>
 	</section>
 </section>

@@ -33,6 +33,8 @@ import { DropdownTagHolderComponent } from './components/molecules/dropdown-tag-
 import { AddCapabilityFormComponent } from './components/organisms/add-capability-form/add-capability-form.component';
 import { ModalResultComponent } from './components/atoms/modal-result/modal-result.component';
 import { AddBootcampFormComponent } from './components/organisms/add-bootcamp-form/add-bootcamp-form.component';
+import { LibraryNavComponent } from './components/molecules/library-nav/library-nav.component';
+import { PaginationComponent } from './components/molecules/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { AddBootcampFormComponent } from './components/organisms/add-bootcamp-fo
     AddCapabilityFormComponent,
     ModalResultComponent,
     AddBootcampFormComponent,
+    LibraryNavComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

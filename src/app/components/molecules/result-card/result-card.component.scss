@@ -2,22 +2,34 @@
 	width: 98%;
 	margin: auto;
 	display: flex;
-	flex-direction: column;
-	// background-color: orange;
-	border-bottom: 3px solid var(--dark-color);
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid var(--dark-color);
 
-	& .result-card__name p {
-		font-weight: bolder;
-		font-size: 1.3em;
-		text-transform: uppercase;
+	& .info {
+		margin-left: 0.5em;
+
+		& .result-card__name {
+			font-weight: bolder;
+			font-size: 1.2rem;
+		}
+
+		&>* {
+			padding: 0.2em;
+			margin: 0%;
+
+			& p {
+				margin: 0%;
+			}
+		}
 	}
 
-	&>* {
-		padding: 0.2em;
-		margin: 0%;
-
-		& p {
-			margin: 0%;
-		}
+	button {
+		width: 2.5em;
+		height: 2.5em;
+		border-radius: 2.5em;
+		border: none;
+		background-color: var(--dark-color);
+		margin-right: 1em;
 	}
 }

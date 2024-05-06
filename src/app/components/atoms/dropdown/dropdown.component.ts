@@ -26,7 +26,6 @@ export class DropdownComponent {
 
 	onOptionChange(optionValue: string) {
 		this.selectedOption = optionValue;
-		console.log("selected: " +this.selectedOption);
 		this.optionSelected.emit(this.options.find(option => option.value === this.selectedOption)!);
 	}
 }

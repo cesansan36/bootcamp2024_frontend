@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ResultCardContent } from 'src/app/models/componentmodels/result-card-content';
+import { RESULT_CARD_INITIAL } from 'src/utils/initialstates/component/resultcardcontent/result-card-initial';
 
 @Component({
 	selector: 'app-result-card',
@@ -6,8 +8,12 @@ import { Component, Input } from '@angular/core';
 	styleUrls: ['./result-card.component.scss']
 })
 export class ResultCardComponent {
-	@Input() id: number = 0;
-	@Input() name: string = 'some name';
-	@Input() description: string = 'some description';
 
+	@Input() resultCardContent: ResultCardContent = {...RESULT_CARD_INITIAL};
+
+	@Output() formButtonClicked = new EventEmitter();
+
+	handleButtonClick() {
+		this.formButtonClicked.emit();
+	}
 }

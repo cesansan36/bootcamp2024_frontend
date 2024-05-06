@@ -1,0 +1,14 @@
+nav {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	& a {
+		border-bottom: 2px solid var(--dark-color);
+		width: 7em;
+		display: flex;
+		justify-content: center;
+		text-decoration: none;
+		color: var(--dark-color);
+	}
+}

@@ -1,15 +1,11 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
-import { AddTechnologyRequest } from 'src/app/models/datamodels/add-technology-request';
-import { ModalModel } from 'src/app/models/componentmodels/modal-model';
-import { ModalResultModel } from 'src/app/models/componentmodels/modal-result-model';
 import { CreateServiceService } from 'src/app/services/create-service.service';
-import { ButtonTextConstants } from 'src/utils/button-text-constants';
-import { MODAL_INITIAL } from 'src/utils/initialstates/component/modal/modal-initial';
-import { MODAL_RESULT_INITIAL } from 'src/utils/initialstates/component/modalresult/modal-result-initial';
-import { ADD_TECHNOLOGY_INITIAL } from 'src/utils/initialstates/data/addtechnologyrequest/add-technology-initial';
-import { TextConstants } from 'src/utils/text-constats';
 import { LIBRARY_MODAL_INITIAL } from 'src/utils/initialstates/component/librarymodal/library-modal';
 import { LibraryModal } from 'src/app/models/componentmodels/library-modal';
+import { TextValuePair } from 'src/app/models/text-value-pair';
+import { PAGINATION_SIZE_OPTIONS } from 'src/utils/pagination-size-options';
+import { PaginatorService } from 'src/app/services/paginator.service';
+import { ResultCardContent } from 'src/app/models/componentmodels/result-card-content';
 
 @Component({
 	selector: 'app-library',
@@ -18,8 +14,10 @@ import { LibraryModal } from 'src/app/models/componentmodels/library-modal';
 })
 export class LibraryComponent {
 	addService = inject(CreateServiceService);
+	paginatorService = inject(PaginatorService);
 
-	@Input() libraryModal: LibraryModal = {...LIBRARY_MODAL_INITIAL};
+	@Input() libraryModal: LibraryModal = { ...LIBRARY_MODAL_INITIAL };
+	pageSizeOptions: TextValuePair[] = [...PAGINATION_SIZE_OPTIONS];
 	@Output() libraryModalChange = new EventEmitter<LibraryModal>();
 
 	showModal() {
@@ -33,7 +31,17 @@ export class LibraryComponent {
 
 	@Output() formButtonClicked = new EventEmitter();
 
+	@Input() results: ResultCardContent[] = [];
+	@Output() resultsChange = new EventEmitter<ResultCardContent[]>();
+
 	handleModalButtonClick() {
 		this.formButtonClicked.emit();
+	}
+
+	handleItemsPerPageChange(option: TextValuePair) {
+		this.paginatorService.itemsPerPage = +option.value;
+	}
+	handlePageChange(value: number) {
+		this.paginatorService.currentPage = value;
 	}
 }

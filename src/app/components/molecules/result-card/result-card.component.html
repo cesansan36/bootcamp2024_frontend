@@ -1,11 +1,11 @@
 <div class="custom-result-card">
-	<div>
-<input type="hidden" [id]="id">
+	<div class="info">
+		<input type="hidden" [id]="resultCardContent.id">
+
+		<p class="result-card__name">{{resultCardContent.name}}</p>
+		<p class="result-card__description">{{resultCardContent.description}}</p>
 	</div>
-	<div class="result-card__name">
-		<p>{{name}}</p>
-	</div>
-	<div class="result-card__description">
-		<p>{{description}}</p>
-	</div>
+	<button (click)="handleButtonClick()">
+		<img src="" alt="">
+	</button>
 </div>
