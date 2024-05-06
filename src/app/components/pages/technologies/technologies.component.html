@@ -1,11 +1,11 @@
 <app-library
-[(libraryModal)]="libraryModal"
+[(libraryModal)]="libraryModalUser.libraryModal"
 [(results)]="results"
 (formButtonClicked)="handleModalButtonClick()">
 
 	<app-add-technology-form
-		(technologyNameChanged)="updateTechnologyName($event)"
-		(technologyDescriptionChanged)="updateTechnologyDescription($event)"
+		(technologyNameChanged)="technologyRecorder.updateTechnologyName($event)"
+		(technologyDescriptionChanged)="technologyRecorder.updateTechnologyDescription($event)"
 	>
 	</app-add-technology-form>
 </app-library>

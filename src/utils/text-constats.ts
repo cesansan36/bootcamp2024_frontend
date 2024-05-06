@@ -1,4 +1,5 @@
 export const TextConstants = {
+	NOT_SET: 'Not set',
 	TECHNOLOGY_LABEL: 'Tecnología',
 	CAPABILITY_LABEL: 'Capacidad',
 	BOOTCAMP_LABEL: 'Bootcamp',

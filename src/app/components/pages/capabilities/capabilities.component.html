@@ -1,11 +1,11 @@
 <app-library
-	[(libraryModal)]="libraryModal"
+	[(libraryModal)]="libraryModalUser.libraryModal"
 	(formButtonClicked)="handleModalButtonClick()">
 
 	<app-add-capability-form
 		[options]="options"
-		(capabilityNameChanged)="updateCapabilityName($event)"
-		(capabilityTechnologiesChanged)="updateCapabilityTechnologies($event)"
+		(capabilityNameChanged)="capabilityRecorder.updateCapabilityName($event)"
+		(capabilityTechnologiesChanged)="capabilityRecorder.updateCapabilityTechnologies($event)"
 	>
 	</app-add-capability-form>
 </app-library>

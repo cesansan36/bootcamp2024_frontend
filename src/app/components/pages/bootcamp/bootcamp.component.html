@@ -1,12 +1,12 @@
 <app-library
-	[(libraryModal)]="libraryModal"
+	[(libraryModal)]="libraryModalUser.libraryModal"
 	(formButtonClicked)="handleModalButtonClick()">
 
 	<app-add-bootcamp-form
 		[options]="options"
-		(bootcampNameChanged)="updateBootcampName($event)"
-		(bootcampDescriptionChanged)="updateBootcampDescription($event)"
-		(bootcampCapabilitiesChanged)="updateBootcampCapabilities($event)"
+		(bootcampNameChanged)="bootcampRecorder.updateBootcampName($event)"
+		(bootcampDescriptionChanged)="bootcampRecorder.updateBootcampDescription($event)"
+		(bootcampCapabilitiesChanged)="bootcampRecorder.updateBootcampCapabilities($event)"
 	>
 	</app-add-bootcamp-form>
 </app-library>
